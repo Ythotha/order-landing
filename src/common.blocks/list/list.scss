@@ -1,0 +1,23 @@
+@import '../../assets/scss/general/media';
+
+.list {
+  list-style-type: none;
+
+  padding-inline-start: 1.625em;
+
+  &__item {
+    position: relative;
+  }
+
+  &__item + &__item {
+    margin-block-start: .5rem;
+  }
+
+  &__item::before {
+    content: '-';
+
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+  }
+}

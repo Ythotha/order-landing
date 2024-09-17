@@ -1,0 +1,43 @@
+@import '../../assets/scss/general/media';
+
+.intro {
+  padding-block: var(--intro-padding-block);
+
+  background-image: url(intro.jpg);
+  background-size: cover;
+  background-position: 10% 50%;
+
+  @media screen and (min-width: $desktop) {
+    background-position: 50% 50%;
+  }
+
+  &__inner {
+    max-inline-size: 55rem;
+
+    @media screen and (min-width: $desktop) {
+      max-inline-size: 66.666667%;
+    }
+  }
+
+  &__content,
+  &__controls {
+    margin-block-start: var(--intro-margin-block-start, 4rem);
+  }
+
+  &__content {
+    font-size: 1.25em;
+  }
+
+  &__text {
+    font-weight: 700;
+  }
+
+  &__list {
+    margin-block-start: 1rem;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 3rem;
+  }
+}

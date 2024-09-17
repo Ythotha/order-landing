@@ -1,0 +1,9 @@
+@import '../../assets/scss/general/media';
+
+.page {
+  &__container {
+    max-inline-size: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+  }
+}

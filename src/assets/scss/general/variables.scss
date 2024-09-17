@@ -1,0 +1,23 @@
+:root {
+  --font-family-main: 'Lato';
+
+  --color-white: #FFFFFF;
+  --color-gray-1: #6F6D7B;
+  --color-dark: #2A2B30;
+  --color-blue: #3E9CDC;
+
+  --color-accent: var(--color-blue);
+
+  --page-font-size: 1.6rem;
+
+  --container-max-width: 117rem;
+  --container-padding: 1.6rem;
+
+  --intro-padding-block: 10.639412%;
+
+  @media screen and (min-width: $desktop) {
+    --title-font-size: 4.8rem;
+    --intro-margin-block-start: 8rem;
+    --btn-padding: 1.4rem 3.1rem;
+  }
+}

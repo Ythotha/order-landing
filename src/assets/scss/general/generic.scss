@@ -5,3 +5,9 @@ html {
 body {
   font-size: var(--page-font-size);
 }
+
+ul,
+ol {
+  margin-block: 0;
+  padding-inline-start: unset;
+}

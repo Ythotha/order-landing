@@ -1,0 +1,142 @@
+@import '../../assets/scss/general/media';
+
+.header {
+  padding-block: 3.2rem;
+
+  color: var(--color-white);
+
+  background-color: var(--header-bg);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__hamburger {
+    @media screen and (max-width: $desktop - 1) {
+      --label-width: 1.6rem;
+      --label-height: 0.2rem;
+      --padding: 1.2rem;
+
+      position: relative;
+      flex-shrink: 0;
+
+      box-sizing: content-box;
+      width: var(--label-width);
+      height: var(--label-width);
+      border: none;
+      border-radius: 50%;
+      padding: var(--padding);
+
+      cursor: pointer;
+
+      color: var(--color-dark);
+
+      background-color: var(--color-white);
+
+      &_active {
+        justify-content: center;
+      }
+
+      &::before,
+      &-label,
+      &::after {
+        position: absolute;
+        left: var(--padding);
+
+        width: var(--label-width);
+        height: 0.2rem;
+
+        transition: var(--transition-duration);
+
+        background-color: currentColor;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+      }
+
+      &::before {
+        top: var(--padding);
+      }
+
+      &::after {
+        top: calc(100% - var(--label-height) - var(--padding));
+      }
+
+      &-label {
+        top: calc(50% - var(--label-height) / 2);
+      }
+
+
+      &_active::before,
+      &_active::after {
+        top: calc(50% - var(--label-height) / 2);
+      }
+
+      &_active::before {
+        transform: rotate(45deg);
+      }
+
+      &_active &-label {
+        transform: scale(0);
+      }
+
+      &_active::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__menu-list {
+    list-style-type: none;
+
+    @media screen and (max-width: $desktop - 1) {
+      position: absolute;
+      top: 100%;
+      inset-inline: 0;
+
+      background-color: var(--header-bg);
+
+      transition-duration: var(--transition-duration);
+
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+  }
+
+  &__menu-list:not(&__menu-list_active) {
+    max-block-size: 0;
+  }
+
+  &__menu-link {
+    font-size: 1.3rem;
+    color: var(--header-link-color, unset);
+    text-decoration: unset;
+    text-transform: uppercase;
+
+    transition-duration: var(--transition-duration);
+
+    @media screen and (max-width: $desktop - 1) {
+      display: block;
+      padding: var(--container-padding);
+    }
+  }
+
+  &__menu-link:hover,
+  &__menu-link:focus-visible {
+    --header-link-color: var(--color-accent);
+  }
+}

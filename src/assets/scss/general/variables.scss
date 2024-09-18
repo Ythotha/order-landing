@@ -15,6 +15,10 @@
 
   --intro-padding-block: 10.639412%;
 
+  --header-bg: rgba(16, 16, 29, 0.9);
+
+  --transition-duration: 200ms;
+
   @media screen and (min-width: $desktop) {
     --title-font-size: 4.8rem;
     --intro-margin-block-start: 8rem;

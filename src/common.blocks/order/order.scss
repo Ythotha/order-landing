@@ -108,6 +108,8 @@
     display: block;
     inline-size: var(--order-icon-size);
     block-size: var(--order-icon-size);
+
+    fill: currentColor;
   }
 
   &__form {

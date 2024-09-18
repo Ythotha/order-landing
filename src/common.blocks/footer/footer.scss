@@ -1,0 +1,103 @@
+@import '../../assets/scss/general/media';
+
+.footer {
+  --footer-section-padding: min(4rem, 2.083333vw);
+  --footer-section-border: .1rem solid #C3C3C3;
+
+  padding-block: 3rem;
+
+  font-size: .8125em;
+  color: var(--color-white);
+
+  background-color: var(--footer-bg);
+
+  @media screen and (max-width: $desktop - 1) {
+    --footer-gap: 2rem;
+
+    text-align: center;
+  }
+
+  &__container {
+    row-gap: var(--footer-gap);
+
+    @media screen and (max-width: $desktop - 1) {
+      display: grid;
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__section:not(:last-child) {
+    @media screen and (min-width: $desktop) {
+      padding-inline-end: var(--footer-section-padding);
+    }
+  }
+
+  &__section:not(:first-child) {
+    @media screen and (max-width: $desktop - 1) {
+      border-block-start: var(--footer-section-border);
+      padding-block-start: var(--footer-gap);
+    }
+
+    @media screen and (min-width: $desktop) {
+      border-inline-start: var(--footer-section-border);
+      padding-inline-start: var(--footer-section-padding);
+    }
+  }
+
+  &__section:first-child {
+    @media screen and (min-width: $desktop) {
+      inline-size: 15.9375vw;
+    }
+  }
+
+  &__section:nth-child(2) {
+    color: #C3C3C3;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      justify-content: space-between;
+      gap: min(3.8rem, 2vw);
+    }
+  }
+
+  &__item {
+    @media screen and (max-width: $desktop - 1) {
+      margin-block-start: 1rem;
+    }
+  }
+
+  &__service {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__icon {
+    --footer-icon-size: 2rem;
+
+    flex-shrink: 0;
+    inline-size: var(--footer-icon-size);
+    block-size: var(--footer-icon-size);
+
+    fill: var(--color-blue);
+  }
+
+  &__text {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    color: unset;
+    text-decoration: unset;
+  }
+}

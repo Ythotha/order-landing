@@ -1,0 +1,143 @@
+.form {
+  --form-field-border-radius: .3rem;
+  --form-field-padding: 1.2rem 1rem;
+
+  --form-range-thumb-box-sizing: border-box;
+  --form-thumb-size: 2.7rem;
+  --form-range-thumb-border: .3rem solid var(--color-blue-dark);
+  --form-range-thumb-border-radius: 50%;
+
+  --form-range-track-height: .7rem;
+  --form-range-track-border: .1rem solid var(--color-white);
+
+  font-size: 1.8rem;
+
+  &__field {
+    border: .1rem solid var(--color-white);
+    border-radius: var(--form-field-border-radius);
+    padding: var(--form-field-padding);
+
+    background-color: var(--form-field-bg-color);
+  }
+
+  &__field::placeholder {
+    color: var(--color-gray-2);
+    opacity: 1;
+  }
+
+  &__range-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.6rem;
+  }
+
+  &__range {
+    margin-block-start: 1rem;
+
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    inline-size: 100%; /* Specific width is required for Firefox. */
+    background-color: transparent; /* Otherwise white in Chrome */
+  }
+
+  &__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: var(--form-range-thumb-box-sizing);
+    inline-size: var(--form-thumb-size);
+    block-size: var(--form-thumb-size);
+    border: var(--form-range-thumb-border);
+    border-radius: var(--form-range-thumb-border-radius);
+    background-color: var(--color-blue);
+    cursor: pointer;
+
+    transform: translateY(-40%);
+  }
+
+  &__range::-moz-range-thumb {
+    box-sizing: var(--form-range-thumb-box-sizing);
+    inline-size: var(--form-thumb-size);
+    block-size: var(--form-thumb-size);
+    border: var(--form-range-thumb-border);
+    border-radius: var(--form-range-thumb-border-radius);
+    background-color: var(--color-blue);
+    cursor: pointer;
+  }
+
+
+  &__range::-webkit-slider-runnable-track {
+    inline-size: 100%;
+    block-size: var(--form-range-track-height);
+    margin-block-start: .9rem;
+    cursor: pointer;
+    background-color: var(--color-gray-4);
+    border-radius: calc(var(--form-range-track-height) / 2);
+    border: var(--form-range-track-border);
+  }
+
+  &__range:focus::-webkit-slider-runnable-track {
+    background: var(--color-blue);
+  }
+
+
+  &__range::-moz-range-track {
+    inline-size: 100%;
+    block-size: var(--form-range-track-height);
+    cursor: pointer;
+    background-color: var(--color-gray-4);
+    border-radius: calc(var(--form-range-track-height) / 2);
+    border: var(--form-range-track-border);
+  }
+
+  &__range-value {
+    font-weight: 600;
+    color: #DFDFE0;
+  }
+
+  &__file-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: .2rem solid var(--color-blue);
+    border-radius: var(--form-field-border-radius);
+    padding: var(--form-field-padding);
+
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--form-file-field-color, var(--color-gray-2));
+    text-transform: uppercase;
+
+    background-color: var(--form-file-field-bg, var(--color-white));
+
+    cursor: pointer;
+
+    transition-duration: var(--transition-duration);
+  }
+
+  &__file-field:hover,
+  &__file-field:focus-visible {
+    --form-file-field-color: var(--color-white);
+    --form-file-field-bg: var(--color-blue);
+  }
+
+  &__file-input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__file-icon {
+    inline-size: 1.8rem;
+    block-size: 2.1rem;
+
+    fill: currentColor;
+  }
+
+  &__btn {
+    grid-column-start: 2;
+    box-sizing: border-box;
+    min-height: 4.8rem;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}

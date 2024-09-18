@@ -79,6 +79,122 @@
                     </div>
                 </div>
             </section>
+            <section class="order page__section">
+                <div class="page__container">
+                    <h2 class="title title_second">
+                        Оформление  <span class="text-accent">Заказа</span>
+                    </h2>
+                    <p class="order__subtitle">
+                        Перед заполнением формы ознакомьтесь с нашей схемой работы!
+                    </p>
+                    <ul class="order__steps">
+                        <li class="order__step">
+                            <div class="order__decor">
+                                <div class="order__icon-wrapper">
+                                    <svg class="order__icon" viewBox="0 0 55 55">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="order__text">
+                                Lorem ipsum dolor sit amet
+                            </span>
+                        </li>
+                        <li class="order__step">
+                            <div class="order__decor">
+                                <div class="order__icon-wrapper">
+                                    <svg class="order__icon" viewBox="0 0 55 55">
+                                        <use xlink:href="#percent"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="order__text">
+                                Сonsecteturadipiscing elit
+                            </span>
+                        </li>
+                        <li class="order__step">
+                            <div class="order__decor">
+                                <div class="order__icon-wrapper">
+                                    <svg class="order__icon" viewBox="0 0 55 55">
+                                        <use xlink:href="#file-plus"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="order__text">
+                                Sed do eiusmod tempor
+                            </span>
+                        </li>
+                        <li class="order__step">
+                            <div class="order__decor">
+                                <div class="order__icon-wrapper">
+                                    <svg class="order__icon" viewBox="0 0 55 55">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="order__text">
+                                Esse cillum dolore eu fugiat
+                            </span>
+                        </li>
+                        <li class="order__step">
+                            <div class="order__decor">
+                                <div class="order__icon-wrapper">
+                                    <svg class="order__icon" viewBox="0 0 55 55">
+                                        <use xlink:href="#money"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="order__text">
+                                Excepteur sint occaecat cupidatat non proident
+                            </span>
+                        </li>
+                    </ul>
+                    <form class="form order__form">
+                        <select class="form__field" name="select">
+                            <option disabled selected>
+                                Выберите тип системы
+                            </option>
+                            <option value="value1">
+                                Значение 1
+                            </option>
+                            <option value="value2">
+                                Значение 2
+                            </option>
+                            <option value="value3">
+                                Значение 3
+                            </option>
+                        </select>
+                        <input class="form__field" type="email" placeholder="Ваш e-mail">
+                        <input class="form__field" type="text" placeholder="Ваше имя">
+                        <div class="form__range-field order__range">
+                            <div class="form__range-header">
+                                <span>
+                                    Sed ut perspiciatis, unde omnis iste natus
+                                </span>
+                                <div class="form__range-value">
+                                    <output role="status" name="percentage" for="range">
+                                        0
+                                    </output>
+                                    %
+                                </div>
+                            </div>
+                            <input class="form__range" id="range" type="range" value="0" max="100" oninput="percentage.value = range.value">
+                        </div>
+                        <label class="form__file-field">
+                            <input class="form__file-input" type="file" name="file">
+                            <svg class="form__file-icon" viewBox="0 0 18 21">
+                                <use xlink:href="#file"></use>
+                            </svg>
+                            <span class="form__file-text">
+                                Прикрепить файл
+                            </span>
+                        </label>
+                        <button class="btn form__btn">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+            </section>
         </main>
     </div>
 </body>

@@ -1,0 +1,103 @@
+@import '../../assets/scss/general/media';
+
+.order {
+  color: var(--color-white);
+  text-align: center;
+
+  background-color: var(--color-gray-2);
+  background-image: url(order.png);
+  background-size: cover;
+  background-position: 50% 50%;
+
+  overflow: hidden;
+
+  &__subtitle {
+    margin-block-start: var(--order-subtitle-margin, 1.6rem);
+
+    font-size: 1.125em;
+    color: var(--color-gray-3);
+
+    @media screen and (min-width: $desktop) {
+      --order-subtitle-margin: 3rem;
+    }
+  }
+
+  &__steps {
+    --order-steps-gap: 5rem;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-block-start: 8rem;
+    margin-inline: calc(-1 * var(--order-steps-gap) / 2);
+
+    z-index: 1;
+  }
+
+  &__step {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    inline-size: #{'calc(100% / 12 * 2.4 - var(--order-steps-gap))'};
+    margin-inline: calc(var(--order-steps-gap) / 2);
+  }
+
+  &__decor {
+    align-self: stretch;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__step:not(:first-child) &__decor::before {
+    --order-step-before-height: .6rem;
+
+    content: '';
+
+    position: absolute;
+    top: calc(50% - var(--order-step-before-height) / 2);
+    right: 83.068783%;
+    inline-size: 58.201058%;
+    block-size: var(--order-step-before-height);
+
+    background-image: url(order__step-before.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    z-index: -1;
+  }
+
+  &__icon-wrapper {
+    border: .5rem solid var(--color-blue-dark);
+    border-radius: 50%;
+    padding: 1.7rem;
+    background-color: var(--color-blue);
+  }
+
+  &__icon {
+    --order-icon-size: 5.5rem;
+
+    display: block;
+    inline-size: var(--order-icon-size);
+    block-size: var(--order-icon-size);
+  }
+
+  &__form {
+    margin-block-start: var(--order-form-margin, 4rem);
+
+    @media screen and (min-width: $desktop) {
+      --order-form-margin: 8rem;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      gap: 3rem;
+    }
+  }
+
+  &__range {
+    grid-column: 1 / span 2;
+  }
+}

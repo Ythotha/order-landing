@@ -150,7 +150,7 @@
                         </li>
                     </ul>
                     <form class="form order__form">
-                        <select class="form__field" name="select">
+                        <select class="form__field order__field" name="select">
                             <option disabled selected>
                                 Выберите тип системы
                             </option>
@@ -164,9 +164,9 @@
                                 Значение 3
                             </option>
                         </select>
-                        <input class="form__field" type="email" placeholder="Ваш e-mail">
-                        <input class="form__field" type="text" placeholder="Ваше имя">
-                        <div class="form__range-field order__range">
+                        <input class="form__field order__field" type="email" placeholder="Ваш e-mail">
+                        <input class="form__field order__field" type="text" placeholder="Ваше имя">
+                        <div class="form__range-field order__field order__field_range">
                             <div class="form__range-header">
                                 <span>
                                     Sed ut perspiciatis, unde omnis iste natus
@@ -180,7 +180,7 @@
                             </div>
                             <input class="form__range" id="range" type="range" value="0" max="100" oninput="percentage.value = range.value">
                         </div>
-                        <label class="form__file-field">
+                        <label class="form__file-field order__field">
                             <input class="form__file-input" type="file" name="file">
                             <svg class="form__file-icon" viewBox="0 0 18 21">
                                 <use xlink:href="#file"></use>
@@ -189,7 +189,7 @@
                                 Прикрепить файл
                             </span>
                         </label>
-                        <button class="btn form__btn">
+                        <button class="btn form__btn order__btn">
                             Отправить
                         </button>
                     </form>

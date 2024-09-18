@@ -2,7 +2,6 @@
 
 .order {
   color: var(--color-white);
-  text-align: center;
 
   background-color: var(--color-gray-2);
   background-image: url(order.png);
@@ -10,6 +9,10 @@
   background-position: 50% 50%;
 
   overflow: hidden;
+
+  @media screen and (min-width: $desktop) {
+    text-align: center;
+  }
 
   &__subtitle {
     margin-block-start: var(--order-subtitle-margin, 1.6rem);
@@ -25,13 +28,18 @@
   &__steps {
     --order-steps-gap: 5rem;
 
-    position: relative;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 3.2rem;
     margin-block-start: 8rem;
     margin-inline: calc(-1 * var(--order-steps-gap) / 2);
 
-    z-index: 1;
+    @media screen and (min-width: $desktop) {
+      position: relative;
+
+      z-index: 1;
+    }
   }
 
   &__step {
@@ -40,8 +48,24 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    inline-size: #{'calc(100% / 12 * 2.4 - var(--order-steps-gap))'};
+    inline-size: calc(100% / var(--order-columns-quantity, 1) - var(--order-steps-gap));
     margin-inline: calc(var(--order-steps-gap) / 2);
+
+    @media screen and (min-width: $xs) {
+      --order-columns-quantity: 2;
+    }
+
+    @media screen and (min-width: $sm) {
+      --order-columns-quantity: 3;
+    }
+
+    @media screen and (max-width: $desktop - 1) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: $desktop) {
+      --order-columns-quantity: 5;
+    }
   }
 
   &__decor {
@@ -52,21 +76,23 @@
   }
 
   &__step:not(:first-child) &__decor::before {
-    --order-step-before-height: .6rem;
+    @media screen and (min-width: $desktop) {
+      --order-step-before-height: .6rem;
 
-    content: '';
+      content: '';
 
-    position: absolute;
-    top: calc(50% - var(--order-step-before-height) / 2);
-    right: 83.068783%;
-    inline-size: 58.201058%;
-    block-size: var(--order-step-before-height);
+      position: absolute;
+      top: calc(50% - var(--order-step-before-height) / 2);
+      right: 83.068783%;
+      inline-size: 58.201058%;
+      block-size: var(--order-step-before-height);
 
-    background-image: url(order__step-before.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+      background-image: url(order__step-before.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
 
-    z-index: -1;
+      z-index: -1;
+    }
   }
 
   &__icon-wrapper {
@@ -97,7 +123,26 @@
     }
   }
 
-  &__range {
-    grid-column: 1 / span 2;
+  &__field:not(:first-child) {
+    @media screen and (max-width: $desktop - 1) {
+      margin-block-start: 2rem;
+    }
+  }
+
+  &__field-range {
+    @media screen and (min-width: $desktop) {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__btn {
+    @media screen and (max-width: $desktop - 1) {
+      inline-size: 100%;
+      margin-block-start: 3rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+      grid-column-start: 2;
+    }
   }
 }

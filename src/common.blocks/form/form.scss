@@ -13,6 +13,9 @@
   font-size: 1.8rem;
 
   &__field {
+    box-sizing: border-box;
+    display: block;
+    inline-size: 100%;
     border: .1rem solid var(--color-white);
     border-radius: var(--form-field-border-radius);
     padding: var(--form-field-padding);
@@ -28,7 +31,15 @@
   &__range-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1.6rem;
+  }
+
+  &__range-value {
+    flex-shrink: 0;
+
+    font-weight: 600;
+    color: #DFDFE0;
   }
 
   &__range {
@@ -87,11 +98,6 @@
     border: var(--form-range-track-border);
   }
 
-  &__range-value {
-    font-weight: 600;
-    color: #DFDFE0;
-  }
-
   &__file-field {
     display: flex;
     justify-content: center;
@@ -133,7 +139,6 @@
   }
 
   &__btn {
-    grid-column-start: 2;
     box-sizing: border-box;
     min-height: 4.8rem;
 

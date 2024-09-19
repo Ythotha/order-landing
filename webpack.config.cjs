@@ -37,7 +37,7 @@ module.exports = {
 
 	output: {
 		clean: true,
-		path: resolve(__dirname, './dist'),
+		path: resolve(__dirname, './docs'),
 		filename: process.env.NODE_ENV === 'development' ? 'js/[name].js' : 'js/[name].min.js',
 		assetModuleFilename: 'assets[name][ext]'
 	},
